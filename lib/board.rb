@@ -7,10 +7,7 @@ class Board
     @players_spaces = []
     @board_spaces = []
     i=0
-    9.times do |i|
-      @board_spaces << Space.new(i, '')
-      i+=1
-    end
+    9.times { |i| @board_spaces << Space.new(i, ''); i+=1 }
   end
 
   def find_space(num)
@@ -21,8 +18,12 @@ class Board
     result = false
     @board_spaces.each do |sp|
       if sp.number == player_chose_space
-        sp.symbol = player.symbol
-        result = sp
+        if sp.symbol == "X" || sp.symbol =="O"
+          return false
+        else
+          sp.symbol = player.symbol
+          result = sp
+        end
       end
     end
     result

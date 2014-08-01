@@ -40,4 +40,11 @@ describe Board do
     expect(test_board.mark_space(test_player,5)).to eq (test_board.board_spaces[5])
   end
 
+  it "does not allow player to choose marked space" do
+    test_board = Board.new
+    test_player = Player.new("X")
+    test_player2 = Player.new("O")
+    test_board.mark_space(test_player,5)
+    expect(test_board.mark_space(test_player2,5)).to eq false
+  end
 end
