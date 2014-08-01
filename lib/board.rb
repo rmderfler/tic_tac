@@ -1,11 +1,9 @@
+#require './spaces'
 class Board
 
   attr_accessor :board_spaces
 
-  @@boards = []
-
-  def initialize(name)
-    @name = name
+  def initialize
     @players_spaces = []
     @board_spaces = []
     i=0
@@ -13,18 +11,15 @@ class Board
       @board_spaces << Space.new(i, '')
       i+=1
     end
-    @@boards << self
   end
 
-  def self.all
-    @@boards
+  def find_space(num)
+    @board_spaces.find { |sp| num == sp.number }
   end
 
   # def occupied (space, player)
   #   if space.symbol == player.symbol
   #     "occupied"
   #   end
-
-
 end
 
