@@ -10,3 +10,10 @@ describe Player do
   end
 
 end
+
+describe Space do
+  it 'is initialized by a space' do
+    test_space = Space.new('4')
+    expect(test_space).to be_an_instance_of Space
+  end
+end
