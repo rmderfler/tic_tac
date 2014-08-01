@@ -8,7 +8,5 @@ class Player
     @symbol = symbol
     @@players << self
   end
-
-
 end
 

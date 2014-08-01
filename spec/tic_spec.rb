@@ -34,6 +34,7 @@ describe Board do
     test_board = Board.new
     expect(test_board.find_space(5)).to eq test_board.board_spaces[5]
   end
+
   it 'marks the space chosen by player' do
     test_board = Board.new
     test_player = Player.new("X")
@@ -46,5 +47,14 @@ describe Board do
     test_player2 = Player.new("O")
     test_board.mark_space(test_player,5)
     expect(test_board.mark_space(test_player2,5)).to eq false
+  end
+
+  it 'determines if a player is a winner!' do
+    test_board = Board.new
+    test_player = Player.new("X")
+    test_board.mark_space(test_player,0)
+    test_board.mark_space(test_player,3)
+    test_board.mark_space(test_player,6)
+    expect(test_board.win(test_player)).to eq test_player
   end
 end
