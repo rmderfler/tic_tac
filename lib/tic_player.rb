@@ -9,9 +9,6 @@ class Player
     @@players << self
   end
 
-  def choose_space(space)
-    @board_spaces[number].symbol = self.symbol
-  end
-end
 
+end
 

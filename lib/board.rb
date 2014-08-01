@@ -17,9 +17,14 @@ class Board
     @board_spaces.find { |sp| num == sp.number }
   end
 
-  # def occupied (space, player)
-  #   if space.symbol == player.symbol
-  #     "occupied"
-  #   end
+  def mark_space(player, player_chose_space)
+    result = false
+    @board_spaces.each do |sp|
+      if sp.number == player_chose_space
+        sp.symbol = player.symbol
+        result = sp
+      end
+    end
+    result
+  end
 end
-

@@ -8,16 +8,6 @@ describe Player do
     test_player = Player.new("X")
     expect(test_player).to be_an_instance_of Player
   end
-
-  # it "can mark a space with its symbol" do
-  #   test_board = Board.new
-  #   test_player = Player.new("X")
-  #   puts test_player.symbol
-  #   test_board.board_spaces[0].symbol = "Y"
-  #   puts test_board.board_spaces[0].symbol
-  #   test_player.choose_space(0)
-  #   expect(test_board.board_spaces[0].symbol).to eq("X")
-  # end
 end
 
 describe Space do
@@ -42,7 +32,12 @@ describe Board do
 
   it 'finds a space provided by the player' do
     test_board = Board.new
-    #test_space = Space.new('5', "")
     expect(test_board.find_space(5)).to eq test_board.board_spaces[5]
   end
+  it 'marks the space chosen by player' do
+    test_board = Board.new
+    test_player = Player.new("X")
+    expect(test_board.mark_space(test_player,5)).to eq (test_board.board_spaces[5])
+  end
+
 end
