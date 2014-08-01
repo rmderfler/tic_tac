@@ -46,7 +46,7 @@ describe Board do
     test_player = Player.new("X")
     test_player2 = Player.new("O")
     test_board.mark_space(test_player,5)
-    expect(test_board.mark_space(test_player2,5)).to eq false
+    expect(test_board.mark_space(test_player2,5)).to eq "false"
   end
 
   it 'determines if a player is a winner!' do

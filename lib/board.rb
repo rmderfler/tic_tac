@@ -18,19 +18,15 @@ class Board
     result = false
     @board_spaces.each do |sp|
       if sp.number == player_chose_space
-        if sp.symbol == "X" || sp.symbol =="O"
-          return false
+        if sp.symbol == "X" || sp.symbol == "O"
+          return "false"
         else
           sp.symbol = player.symbol
           result = sp
         end
       end
     end
-    if player.symbol = "X"
-      @playerX_spaces << result.number
-    else
-      @playerO_spaces << result.number
-    end
+    @playerX_spaces << result.number ? player.symbol = "X" : @playerO_spaces << result.number
     result
   end
 
