@@ -23,4 +23,11 @@ describe Board do
     test_board = Board.new
     expect(test_board.board_spaces.length).to eq 9
   end
+
+  it 'creates nine space objects that are numbered 0 through 8' do
+    test_board = Board.new
+    array = []
+    test_board.board_spaces.each { |sp| array << sp.number }
+    expect(array).to eq [0,1,2,3,4,5,6,7,8]
+  end
 end
